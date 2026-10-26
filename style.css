@@ -1,0 +1,117 @@
+/* ===== Color palette ===== */
+:root {
+    --shadow-grey: #272932;
+    --steel-blue: #4D7EA8;
+    --grey: #828489;
+    --cool-steel: #9CA3B1;
+    --powder-blue: #B6C2D9;
+}
+
+/* ===== Base ===== */
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--shadow-grey);
+    color: var(--powder-blue);
+    font-family: "Clarity City", "Segoe UI", Arial, sans-serif;
+}
+
+/* ===== Heading ===== */
+h2 {
+    font-family: "Abril Fatface", serif;
+    font-weight: 400;
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    text-align: center;
+    color: var(--powder-blue);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--steel-blue);
+}
+
+/* ===== Form ===== */
+form {
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.5rem;
+    background-color: rgba(130, 132, 137, 0.15);
+    border: 1px solid var(--grey);
+    border-radius: 12px;
+}
+
+form br {
+    display: none; /* spacing is handled by the flex gap */
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: var(--shadow-grey);
+    color: var(--powder-blue);
+    border: 2px solid var(--grey);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]::placeholder {
+    color: var(--cool-steel);
+    opacity: 0.8;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: var(--steel-blue);
+    box-shadow: 0 0 0 3px rgba(77, 126, 168, 0.4);
+}
+
+/* ===== Button ===== */
+input[type="button"] {
+    padding: 0.75rem 1rem;
+    background-color: var(--steel-blue);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, transform 0.1s;
+}
+
+input[type="button"]:hover {
+    background-color: var(--powder-blue);
+    color: var(--shadow-grey);
+}
+
+input[type="button"]:active {
+    transform: scale(0.98);
+}
+
+input[type="button"]:focus-visible {
+    outline: 3px solid var(--cool-steel);
+    outline-offset: 2px;
+}
+
+/* ===== Result area ===== */
+#result {
+    width: 100%;
+    max-width: 480px;
+    margin-top: 1.5rem;
+    padding: 1rem 1.25rem;
+    background-color: rgba(182, 194, 217, 0.08);
+    border-left: 4px solid var(--steel-blue);
+    border-radius: 8px;
+    color: var(--cool-steel);
+    line-height: 1.6;
+    word-wrap: break-word;
+}
+
+#result:empty {
+    display: none;
+}
